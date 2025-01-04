@@ -85,6 +85,7 @@ production:
   primary: &primary_production
     <<: *default
     database: mingstore_production
+    url: <%= ENV['DATABASE_URL'] %>
     username: mingstore
     password: <%= ENV["MINGSTORE_DATABASE_PASSWORD"] %>
   cache:
