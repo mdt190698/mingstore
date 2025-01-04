@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Mingstore" %></title>
+    <title><%= content_for(:title) || "MingStore" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -23,6 +23,20 @@
   </head>
 
   <body>
-    <%= yield %>
+      <div class="notice"><%= notice %></div>
+      <% unless controller_name == 'sessions' && action_name == 'new' %>
+  <nav>
+  <div class="nav-container">
+  <div class="nav-title">My Shop</div>
+</div>
+    <%= link_to "Home", root_path, class: "nav-link" %>
+    <% if authenticated? %>
+      <%= button_to "Log out", session_path, method: :delete, class: "logout-button" %>
+    <% end %>
+  </nav>
+<% end %>
+<main>
+<%= yield %>
+</main>
   </body>
 </html>
