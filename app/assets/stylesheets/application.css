@@ -141,7 +141,7 @@ body {
     background: #7cbae9 ; /* Thay đổi nền khi hover */
     transform: scale(1.1); /* Phóng to nhẹ khi hover */
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Tăng hiệu ứng bóng */
-    color: #fff
+    color: yellow
   }
   
   .back-btn:active {
